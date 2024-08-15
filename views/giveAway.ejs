@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assignment 1 - Question 8</title>  
+        <link rel="stylesheet" href="/css/styleQ8.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/js/Q7.js" defer></script>
+    </head>
+    <body>
+        <%- include('partials/header') %>
+<main>
+<div class="sidebar">
+    <ul>
+        <li>
+            <a href="/login">Login</a>
+        </li>
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li>
+            <a href="/find">Find Available Pets</a>
+        </li>
+        <li>
+            <a href="/dogCare">Dog Care</a>
+        </li>
+        <li>
+            <a href="/catCare">Cat Care</a>
+        </li>
+        <li>
+            <a href="/giveAway">Have a Pet to Give Away</a>
+        </li>
+        <li>
+            <a href="/contact">Contact Us</a>
+        </li>
+    </ul>
+</div>
+            <div>
+                <h1>Do you have a pet to give away?</h1>
+                <p>Please tell us about your pet!</p>
+                <form name="giveAwayForm" action="/submit-pet-info" method="POST">
+                    <label>Cat or Dog? <input type="radio" name="animal" id="cat" value="cat"> Cat </label>
+                    <label><input type="radio" name="animal" id="dog" value="dog"> Dog </label>
+                    <p></p>
+                    <label>
+                        Breed: <input type="text" name="breed" id="breed">
+                    </label>
+                    <p></p>
+                    <label>
+                        Age of animal: 
+                        <select name="age">
+                            <option>0-1</option>
+                            <option>2-3</option>
+                            <option>4-5</option>
+                            <option>6-10</option>
+                            <option>10+</option>
+                        </select>
+                    </label>
+                    <p></p>
+                    <label> Gender: <input type="radio" name="gender" id="female" value="female"> Female </label>
+                    <label><input type="radio" name="gender" id="male" value="male"> Male </label>
+                    <p></p>
+                    <label> Does your pet get along with other dogs? <input type="radio" name="alongDogs" id="dogsYes" value="yes"> Yes </label>
+                    <label><input type="radio" name="alongDogs" id="dogsNo" value="no"> No </label>
+                    <p></p>
+                    <label> Does your pet get along with other cats? <input type="radio" name="alongCats" id="catsYes" value="yes"> Yes </label>
+                    <label><input type="radio" name="alongCats" id="catsNo" value="no"> No </label>
+                    <p></p>
+                    <label> Suitable for family with small children? <input type="radio" name="alongKids" id="kidsYes" value="yes"> Yes </label>
+                    <label><input type="radio" name="alongKids" id="kidsNo" value="no"> No </label>
+                    <p></p>
+                    <p>
+                    <textarea name="comments" id="comments" rows = 3 cols = 40>Brag about your pet!</textarea>
+                    </p>
+                    <p></p>
+                    <label>Given Name of Current Owner: <input type="text" name="givenName" id="givenName"></label>
+                    <p></p>
+                    <label>Family Name of Current Owner: <input type="text" name="familyName" id="familyName"></label>
+                    <p></p>
+                    <label>Your Email: <input type="email" name="email" id="ownerEmail"></label>
+                    <p></p>
+                    <button type="submit" value="Submit">Submit</button>
+                    <button type="reset" value="Reset">Reset</button>
+                </form>
+            </div>
+</main>
+            <%- include('partials/footer') %>
+        </body>
+</html>

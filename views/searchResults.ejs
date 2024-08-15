@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assignment 1 - Question 8</title>  
+        <link rel="stylesheet" href="/css/styleQ8.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/js/Q7.js" defer></script>
+    </head>
+    <body>
+        <%- include('partials/header') %>
+<main>
+<div class="sidebar">
+    <ul>
+        <li>
+            <a href="/login">Login</a>
+        </li>
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li>
+            <a href="/find">Find Available Pets</a>
+        </li>
+        <li>
+            <a href="/dogCare">Dog Care</a>
+        </li>
+        <li>
+            <a href="/catCare">Cat Care</a>
+        </li>
+        <li>
+            <a href="/giveAway">Have a Pet to Give Away</a>
+        </li>
+        <li>
+            <a href="/contact">Contact Us</a>
+        </li>
+    </ul>
+</div>
+<div style="display:grid; grid-template-columns: 1fr;">
+    <h1>Search Results</h1>
+    <% if (pets.length > 0) { %>
+        <ul style="list-style-type: none;">
+            <% pets.forEach(function(pet) { %>
+                <li>
+                    <h2><%= pet.breed %></h2>
+                    <p><strong>Type:</strong> <%= pet.petType %></p>
+                    <p><strong>Breed:</strong> <%= pet.breed %></p>
+                    <p><strong>Age:</strong> <%= pet.petAge %></p>
+                    <p><strong>Gender:</strong> <%= pet.petGender %></p>
+                    <p><strong>Gets along with other dogs:</strong> <%= pet.alongDogs %></p>
+                    <p><strong>Gets along with other cats:</strong> <%= pet.alongCats %></p>
+                    <p><strong>Suitable for children:</strong> <%= pet.alongKids %></p>
+                    <p><strong>Comments:</strong> <%= pet.comments %></p>
+                    <p><strong>Owner:</strong> <%= pet.givenName %> <%= pet.familyName %></p>
+                    <p><strong>Email:</strong> <%= pet.email %></p>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No pets match your criteria.</p>
+    <% } %>
+    <a href="/find">Back to Search</a>
+
+</div>
+</main>
+<%- include('partials/footer') %>
+    </body>
+    </html>
+

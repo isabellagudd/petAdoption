@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assignment 1 - Question 8</title>  
+        <link rel="stylesheet" href="/css/styleQ8.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/js/Q7.js" defer></script>
+    </head>
+    <body>
+        <%- include('partials/header') %>
+<main>
+<div class="sidebar">
+    <ul>
+        <li>
+            <a href="/login">Login</a>
+        </li>
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li>
+            <a href="/find">Find Available Pets</a>
+        </li>
+        <li>
+            <a href="/dogCare">Dog Care</a>
+        </li>
+        <li>
+            <a href="/catCare">Cat Care</a>
+        </li>
+        <li>
+            <a href="/giveAway">Have a Pet to Give Away</a>
+        </li>
+        <li>
+            <a href="/contact">Contact Us</a>
+        </li>
+    </ul>
+</div>
+            <div>
+                <h2>Cat</h2>
+                <form name="catForm" action="/find-pet" method="POST">
+                    <label> Breed (Pick as many as apply):<br><input type="checkbox" name="catBreed[]" value="siamese"> Siamese</label>
+                    <label><input type="checkbox" name="catBreed[]" value="burmese">Burmese</label>
+                    <label><input type="checkbox" name="catBreed[]" value="sphynx"> Sphynx</label> <br>
+                    <label><input type="checkbox" name="catBreed[]" value="bengal"> Bengal</label>
+                    <label><input type="checkbox" name="catBreed[]" value="ragdoll"> Ragdoll</label>
+                    <label><input type="checkbox" name="catBreed[]" value="siberian"> Siberian</label> <br>
+                    <label><input type="checkbox" name="catBreed[]" value="Other"> Other</label>
+                    <label><input type="checkbox" name="catBreed[]" value="all"> All</label>
+                    <p></p>
+                    <label>
+                        Preferred age of animal: 
+                        <select name="age">
+                            <option>0-1</option>
+                            <option>2-3</option>
+                            <option>4-5</option>
+                            <option>6-10</option>
+                            <option>10+</option>
+                            <option>Doesn't Matter</option>
+                        </select>
+                    </label> 
+                    <p></p>
+                    <label> Preferred Gender: <input type="radio" name="gender" id="preferFemaleCat" value="female"> Female </label>
+                    <label><input type="radio" name="gender" id="preferMaleCat" value="male"> Male </label>
+                    <label><input type="radio" name="gender" id="preferAnyCat" value="any"> Any </label> 
+                    <p></p>
+                    <label>Does it need to get along with other dogs, cats or small children? <br><input type="radio" name="coexisting" id="cat-yesCoexist" value="yes"> Yes </label>
+                    <label><input type="radio" name="coexisting" id="cat-noCoexist" value="no"> No </label> 
+                    <p></p>
+                    <button type="submit" value="Submit">Submit</button>
+                    <button type="reset" value="Reset">Reset</button>
+
+                </form>
+            </div>
+            <div>
+                <h2>Dog</h2>
+                <form name="dogForm"  action="/find-pet" method="POST">
+                    <label> Breed (Pick as many as apply):<br><input type="checkbox" name="dogBreed[]" value="ShihTzu"> Shih Tzu</label>
+                    <label><input type="checkbox" name="dogBreed[]" value="golden">Golden Retriever</label>
+                    <label><input type="checkbox" name="dogBreed[]" value="bulldog"> Bulldog</label> <br>
+                    <label><input type="checkbox" name="dogBreed[]" value="german"> German Sheperd</label>
+                    <label><input type="checkbox" name="dogBreed[]" value="beagle"> Beagle</label>
+                    <label><input type="checkbox" name="dogBreed[]" value="poodle"> Poodle</label> <br>
+                    <label><input type="checkbox" name="dogBreed[]" value="Other"> Other</label>
+                    <label><input type="checkbox" name="dogBreed[]" value="all"> All</label>
+                    <p></p>
+                    <label>
+                        Preferred age of animal: 
+                        <select name="age">
+                            <option>0-1</option>
+                            <option>2-3</option>
+                            <option>4-5</option>
+                            <option>6-10</option>
+                            <option>10+</option>
+                            <option>Doesn't Matter</option>
+                        </select>
+                    </label>
+                    <p></p>
+                    <label> Preferred Gender: <input type="radio" name="gender" id="preferFemaleDog" value="female"> Female </label>
+                    <label><input type="radio" name="gender" id="preferMaleDog" value="male"> Male </label>
+                    <label><input type="radio" name="gender" id="preferAnyDog" value="any"> Any </label>
+                    <p></p>
+                    <label>Does it need to get along with other dogs, cats or small children? <br><input type="radio" name="coexisting" id="dog-yesCoexist" value="yes"> Yes </label>
+                    <label><input type="radio" name="coexisting" id="dog-noCoexist" value="no"> No </label> 
+                    <p></p>
+                    <button type="submit" value="Submit">Submit</button>
+                    <button type="reset" value="Reset">Reset</button>
+                </form>
+            </div>
+</main>
+            <%- include('partials/footer') %>
+        </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Assignment 1 - Question 8</title>  
+        <link rel="stylesheet" href="/css/styleQ8.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/js/Q7.js" defer></script>
+    </head>
+    <body>
+        <%- include('partials/header') %>
+<main>
+<div class="sidebar">
+    <ul>
+        <li>
+            <a href="/login">Login</a>
+        </li>
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li>
+            <a href="/find">Find Available Pets</a>
+        </li>
+        <li>
+            <a href="/dogCare">Dog Care</a>
+        </li>
+        <li>
+            <a href="/catCare">Cat Care</a>
+        </li>
+        <li>
+            <a href="/giveAway">Have a Pet to Give Away</a>
+        </li>
+        <li>
+            <a href="/contact">Contact Us</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <h1>Create a New Account</h1>
+    <p>Username can contain letters (both upper and lower case) and digits only.</p>
+    <p>Password must be at least 4 characters long, and contain <br>at least one letter and one digit.</p>
+</div>
+<div style="border: 1px solid black; border-collapse: collapse; height: max-content; padding: 10px; margin-left: 10vh; margin-top: 5vh;;">
+    <form action="/create-account" method="POST" id="createAccountForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <p></p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <p></p>
+            <button type="submit">Create Account</button>
+    </form>
+</div>
+<div id="message"></div>
+</main>
+<%- include('partials/footer') %>
+</body>
+</html>
+
